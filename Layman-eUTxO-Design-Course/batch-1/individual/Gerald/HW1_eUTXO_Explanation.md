@@ -14,6 +14,8 @@ A good analogy I come across is that savings account is only capable of spending
 
 
 ### UTXO (Unspent Transition Output)
+![Bitcoin](https://miro.medium.com/max/1400/0*1v3M5u7SFdpCB3Bk)
+
 ***UTXO*** is pretty much a big pool of boxes that each of them is:
 - Immutable
 - Can only be spent once
