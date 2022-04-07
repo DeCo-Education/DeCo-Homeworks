@@ -5,7 +5,7 @@ The insurance industry makes up one of the key pillars of ***TradFi*** and has h
 Firstly, there is a high-level of mistrust between the customer (policy holder) and the insurer. Insurers are incentivised to make profits - with the key levers being increasing the top line revenue from increased premiums or by reducing the amount paid out in claims. Similarly, customers are incentivised to make false or larger claims to cover their losses. This ultimately results in an non-optimal nash-equilibrium.  A number of insurtech’s such as Lemonade have recently attempted to evolve the business models to remove mis-trust, however much of the same issues remain unresolved. 
 
 
-2. Secondly, despite the emergence of ***DeFi*** we are yet to see a proportional uptake of insurance solutions.  As a rough comparison, the largest ***DeFi*** protocol **Curve** currently has ***~$21bn*** in TVL compared to the largest insurance protocol **Nexus Mutual** which has ***~$540 million*** locked up.
+2. Secondly, despite the emergence of ***DeFi*** we are yet to see a proportional uptake of insurance solutions.  As a rough comparison, the largest ***DeFi*** protocol **Curve** currently has ***~$21bn*** in TVL compared to the largest insurance protocol [Nexus Mutual](https://nexusmutual.io/) which has ***~$540 million*** locked up.
 
 
 
