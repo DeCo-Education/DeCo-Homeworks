@@ -36,7 +36,9 @@ The transaction takes Box 3 (holding Bob's funds for swap)  as input and outputs
 In Stage 3, Bob's NETA is sent to him. We have Box 4 and Box 5 as inputs. Both boxes are under the liquidity pool validator. 
 
 As output, we have Box 6, which is a new unspent box containing Bob's 100 NETA plus 0.001 ERG. This 0.001 is necessary because it is the minimum value in ERG that an unspent box must contain on the Ergo network.
+
 ![Stage 1 Diagram](images/es-hw1-stage3.png)
+
 In this stage, notice we are using the R2 register, which is the register for holding native assets. 
 
 Box 7 is the new unspent box for the liquidity pool. It now contains 101 ERG and 9900 NETA. 
