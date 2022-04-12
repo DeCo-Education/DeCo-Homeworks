@@ -90,7 +90,7 @@ They decide to pool their funds and store the NFT in a box protected with a thre
 
 ## Scripts
 ### Pooling box script
-```
+```scala
 {
 	val refund: SigmaProp = SELF.R4[SigmaProp].get //creator's PK
 
@@ -111,7 +111,7 @@ They decide to pool their funds and store the NFT in a box protected with a thre
 ```
 
 ### NFT seller's box script
-```
+```scala
 {
 	val NFTprice: Long = getVar[Long](0).get
 	val sellerPK: SigmaProp = getVar[SigmaProp](1).get
