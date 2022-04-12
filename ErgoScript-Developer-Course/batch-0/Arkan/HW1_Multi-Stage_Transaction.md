@@ -92,23 +92,25 @@ They decide to pool their funds and store the NFT in a box protected with a thre
 ### Pooling box script
 ```scala
 {
+      //Hard-coded constants
+      //val FriendsNeededToSpendNFTbox: Int
+      //val NFTid: Coll[Byte]
+      //val FriendsPKs: Coll[GroupElement]
 
-	//Hard-coded constants
-	//val friendsNeededToSpendNFTbox: Int
-	//val NFTid: Coll[Byte]
-	//val friendsPKs: Coll[SigmaProp]
+      val refund: SigmaProp = SELF.R4[SigmaProp].get //creator's PK
 
-	val refund: SigmaProp = SELF.R4[SigmaProp].get //creator's PK
+      val thresholdSignature: SigmaProp = atLeast(
+	      FriendsNeededToSpendNFTbox,
+	      FriendsPKs.map{(ge: GroupElement)=> proveDlog(ge)}
+      )
 
-	val thresholdSignature: SigmaProp = atLeast(friendsNeededToSpendNFTbox, friendsPKs)
+      val NFTbought: Bool = OUTPUTS.exists { (out: Box) =>
+	       out.tokens(0)._1 == NFTid &&
+	       out.tokens(0)._2 == 1 &&
+	       out.propositionBytes == thresholdSignature.propBytes
+      }
 
-	val NFTbought: SigmaProp = OUTPUTS.exists { (out: Box) =>
-		out.tokens(0)._1 == NFTid &&
-		out.tokens(0)._2 == 1 &&
-		out.propositionBytes == thresholdSignature.propBytes
-	}
-
-	NFTbought || refund
+      sigmaProp(NFTbought) || refund
 }
 ```
 
@@ -119,10 +121,11 @@ They decide to pool their funds and store the NFT in a box protected with a thre
 	//val NFTprice: Long
 	//val sellerPK: SigmaProp
 
-	val NFTsold: SigmaProp = OUTPUTS.exists { (out: Box) =>
+	val NFTsold: Bool = OUTPUTS.exists { (out: Box) =>
 		out.value >= NFTprice &&
 		out.propositionBytes == sellerPK.propBytes
 	}
-	NFTsold || sellerPK
+
+	sigmaProp(NFTsold) || sellerPK
 }
 ```
