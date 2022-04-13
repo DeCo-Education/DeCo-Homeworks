@@ -109,9 +109,12 @@ They decide to pool their funds and store the NFT in a box protected with a thre
       )
 
       val NFTbought: Bool = OUTPUTS.exists { (out: Box) =>
-	       out.tokens(0)._1 == NFTid &&
-	       out.tokens(0)._2 == 1 &&
-	       out.propositionBytes == thresholdSignature.propBytes
+		if (out.tokens.size >=1){
+		       out.tokens(0)._1 == NFTid &&
+		       out.tokens(0)._2 == 1 &&
+		       out.propositionBytes == thresholdSignature.propBytes
+		       }
+		else false
       }
 
       sigmaProp(NFTbought) || refund
@@ -126,9 +129,12 @@ They decide to pool their funds and store the NFT in a box protected with a thre
 	//val sellerPK: SigmaProp
 
 	val NFTsold: Bool = OUTPUTS.exists { (out: Box) =>
-		out.value >= NFTprice &&
-		out.propositionBytes == sellerPK.propBytes &&
-		out.R4[Coll[Byte]].get == SELF.id
+		if (out.R4[Coll[Byte]].isDefined){
+			out.value >= NFTprice &&
+			out.propositionBytes == sellerPK.propBytes &&
+			out.R4[Coll[Byte]].get == SELF.id
+			}
+		else false
 	}
 
 	sigmaProp(NFTsold) || sellerPK
