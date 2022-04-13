@@ -76,6 +76,10 @@ They decide to pool their funds and store the NFT in a box protected with a thre
             <td>NFT price</td>
          </tr>
          <tr>
+            <td>R4</td>
+            <td>Id of NFT seller's box</td>
+         </tr>
+         <tr>
             <td>Script</td>
             <td>PK(NFT_seller)</td>
          </tr>
@@ -123,7 +127,8 @@ They decide to pool their funds and store the NFT in a box protected with a thre
 
 	val NFTsold: Bool = OUTPUTS.exists { (out: Box) =>
 		out.value >= NFTprice &&
-		out.propositionBytes == sellerPK.propBytes
+		out.propositionBytes == sellerPK.propBytes &&
+		out.R4[Coll[Byte]].get == SELF.id
 	}
 
 	sigmaProp(NFTsold) || sellerPK
