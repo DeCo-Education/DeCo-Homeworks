@@ -32,9 +32,20 @@
 ### 4.1 Renter provides deposit and fee transaction
 |INPUTS|OUTPUTS|
 |------|-------|
-|**Inputs: Renter eUTXOs**| **Out(0): Renter Proxy Contract Box (PCB)**|
-| | **Out(1): Renter eUTXOs**|
-| | **Out(2): Mining fee**|
+|**In(0): Renter Utility Box** | **Out(0): Renter Utility Box**|
+|**Inputs: Renter eUTXOs**| **Out(1): Renter Proxy Contract Box (PCB)**|
+| | **Out(2): Renter eUTXOs**|
+| | **Out(3): Mining fee**|
+
+|**In(0): Renter Utility Box** |
+|----|
+|- helps create all info/registers into Renter PCB|
+|- Spend.Cond: if Renter requests a new job and Renter eUTXO has the correct amount of ERG|
+
+|**Out(0): Renter Utility Box**|
+|----|
+|- Renter Utility Box is re-created|
+
 
  |**Inputs: Renter eUTXOs**|
 |----|
@@ -42,17 +53,17 @@
 |- has to cover rental fee, deposit amount and mining fee in ERG|
 |- Spend. Cond: Renter's PK|
 
- |**Out(0): Renter PCB**|
+ |**Out(1): Renter PCB**|
 |----|
 |- is created with a rental job|
 |- tracks rental info, rental job ID|
 |- Registers: Renter ID, Job ID, Job Status = created|
 
-| **Out(1): Renter eUTXO**|
+| **Out(2): Renter eUTXO**|
 |---|
 |- Change returned to Renter|
 
-| **Out(2) Mining fee**|
+| **Out(3) Mining fee**|
 |---|
 |- 0.001ERG |
 
