@@ -1,0 +1,46 @@
+{
+// Boolean syntax with optional data type
+val haveLiquidity: Boolean = true
+val isDip: Boolean = true
+
+// if/else
+val buyMoreErgo: Boolean = if (haveLiquidity && isDip)
+
+// Data Types
+val myByte: Byte = 127 // 8-bit signed integer. Min: -128. Max: 127
+val myLong: Long = 9223372036854775807 // 64-bit signed integer. Min: -9,223,372,036,854,775,808 Max: 9,223,372,036,854,775,807
+val myBigInt: BigInt = 115792089237316195423570985008687907853269984665640564039457584007913129639935 // 256-bit signed integer. Min: -115,792,089,237,316,195,423,570,985,008,687,907,853,269,984,665,640,564,039,457,584,007,913,129,639,935 Max: 115,792,089,237,316,195,423,570,985,008,687,907,853,269,984,665,640,564,039,457,584,007,913,129,639,935
+
+// Complex Data Types
+val myArr: Coll[Int] = Coll(1, 2, 3) // Constructs a collection with given items, similar to arrays.
+val myPair: (Int, String) = (1, "red") // Pairs any two types. Similar to tuples. 
+val intInPair: myPair._1
+val strInPair: myPair._2
+val myColorIndex: Coll[(Int, String)] = Coll((1, "red"), (2, "blue"), (3, "green")) // example mapping Ints to Strings
+
+// Differences between val and def
+// val evaluates when defined. In this example, calling valTest will produce the same random integer every time.
+val valTest: () => Int = {
+  val r = util.Random.nextInt
+  () => r
+}
+
+// def evaluates when called. In this example, calling defTest will produce a different random integer every time.
+def defTest: () => Int = {
+  val r = util.Random.nextInt
+  () => r
+}
+
+// Lambdas. Anonymous functions.
+val myTokens: Coll[(TokenId, Long)] = {
+  (inputBox: Box) =>
+  inputBox.tokens = Colls.emptyColl[(TokenId, Long)]
+}
+
+val callMyTokens: Coll[(TokenId, Long)] = myTokens(INPUTS[0])
+
+// SigmaProps
+// SigmaProps are returned at the end by every Ergo smart contract. They return a boolean value to determine if the box can be spent or not.  
+sigmaProp(buyMoreErgo) // Since this value is true, if this were a real smart contract then the box could be spent. 
+
+}
