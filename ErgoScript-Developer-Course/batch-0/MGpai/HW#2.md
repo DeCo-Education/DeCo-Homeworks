@@ -17,7 +17,7 @@
     sigmaProp(1==1) // SigmaProp
   }
   else{
-  val sum: Long = moreErg.fold(0, { // val with lambda.
+  val sum: Long = moreErg.fold(0L, { // val with lambda.
   // This iterates through the moreErg Coll and sums the total value in the variable sum
     (accumulator: Long, element: Long) =>
       accumulator + element
