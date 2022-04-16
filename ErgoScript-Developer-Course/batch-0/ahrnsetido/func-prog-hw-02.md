@@ -40,16 +40,26 @@ This examples defines two collections and maps them into a collection of pairs. 
 - [x] Lambda expression (=>)
 
 ```scala 
-  val weekdaysShort: Coll[string] = Coll("Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun")
+  val weekdaysShort: Coll[Coll[Byte]] = Coll(
+    fromBase64("Mon"), 
+    fromBase64("Tue"), 
+    fromBase64("Wed"), 
+    fromBase64("Thur"), 
+    fromBase64("Fri"),
+    fromBase64( "Sat"), 
+    fromBase64("Sun")
+  )
+
   val weekdaysNum: Coll[Int] = Coll(1,2,3,4,5,6,7)
 
-  val weekdaysMap: Coll[(Int,string)] = {
+  val weekdaysMap: Coll[(Int,Coll[Byte])] = {
     weekdaysNum.map{
       (myDay: Int) =>
         (myDay, weekdaysShort(myDay-1))     //Coll starts at 0
     }
   }
-  //expected: Coll[(Int, string)] = [(1,"Mon"),(2,"Tue"),(3,"Wed")...
+  //equivalent to: Coll[(Int, Coll[Byte])] = [(1, "Mon"),(2,"Tue"),(3,"Wed")...
+  // but Coll[Byte] representative for the strings
 ```
 
 ### Example 4
