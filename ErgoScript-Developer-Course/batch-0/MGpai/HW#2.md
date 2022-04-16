@@ -23,7 +23,7 @@
       accumulator + element
   })
   def equalsSum(number: Long) = number == sum // def function
-  sigmaProp(equalsTwo(15 * oneErg))
+  sigmaProp(equalsSum(15 * oneErg))
   }
 }
 ```
