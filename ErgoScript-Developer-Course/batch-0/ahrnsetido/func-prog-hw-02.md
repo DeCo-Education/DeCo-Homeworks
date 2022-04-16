@@ -21,7 +21,7 @@ This example checks if the value in the input box INPUTS(0) is larger than token
 - [x] Boolean
 
 ```scala 
-  val userBox = INPUTS(0)
+  val userBox: Box = INPUTS(0)
 
   if(userBox.value > tokenPriceErg ){
     val enoughErg: Boolean = true
@@ -41,19 +41,20 @@ This examples defines two collections and maps them into a collection of pairs. 
 
 ```scala 
   val weekdaysShort: Coll[string] = Coll("Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun")
-  val weekdaysNum: Coll[Byte] = Coll(1,2,3,4,5,6,7)
+  val weekdaysNum: Coll[Int] = Coll(1,2,3,4,5,6,7)
 
   val weekdaysMap: Coll[(Int,string)] = {
     weekdaysNum.map{
       (myDay: Int) =>
-        (myDay, weekdaysShort(myDay-1))
+        (myDay, weekdaysShort(myDay-1))     //Coll starts at 0
     }
   }
+  //expected: Coll[(Int, string)] = [(1,"Mon"),(2,"Tue"),(3,"Wed")...
 ```
 
 ### Example 4
 
-This example compares the implementation of a def and a val statement for "is that year a leap year" function.
+This example compares the implementation a *def* and a *val statement* for a function that checks if it's a leap year. It contains:
 - [x] val statement
 - [x] def statement
 
@@ -71,14 +72,14 @@ This example compares the implementation of a def and a val statement for "is th
 
 ### Example 5
 
-This example illustrates how SigmaProps are used for spending conditions of Smart Contract. 
+This example illustrates how SigmaProps are used to define spending conditions for a Smart Contract.  It contains:
 - [x] SigmaProps
 
 
 ```scala 
 {
-  val ownerPK: SigmaProp   = PK(ownerPKString)
-  val owner2PK: SigmaProp  = PK(ownerPKString2)
+  val ownerPK: SigmaProp   = PK(ownerPKString) //Public key of owner 1
+  val owner2PK: SigmaProp  = PK(ownerPKString2) //Public key of owner 2
   val thisYear: Int        = INPUTS(0).R4[Int].get //current year is in R4 of INPUT(0)
 
   // define val statement for leap year check 
