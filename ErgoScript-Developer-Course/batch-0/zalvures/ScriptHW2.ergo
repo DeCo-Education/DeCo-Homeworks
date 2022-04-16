@@ -1,0 +1,60 @@
+{
+//1. Booleans
+val bool: Boolean = true
+val bool = true
+val badbool = false
+
+
+//2. If Else
+val n1 = 1
+val ifelse = if (n1 > 0) 1 else 0
+
+
+//3. data types}
+val long: Long = 10000000L //1.
+val nanoErg Long = 1000L * 1000L * 1000L
+val mininbox Long = 1000L * 1000L
+val bool: Boolean = true //2.
+val byte: Byte = 1 //3.
+
+
+//4. Complex data Types
+val coll: Coll[int] = Coll (1, 2, 3, 4, 5, 6) //1.
+val pairs: (Int, Long) = (1, 10000L) //2.
+val access1 = pairs._1
+val access2 = pairs._2
+val mapwhatever: coll[(Int, Long)] = Coll ((1, 1000000L), (2, 1000000L), (3, 1000000L)) //3.
+// this stuff will make sense later right?
+
+
+//5. val vs def statement
+//def are calculated when they are called
+val somevalue: Long = 1000L
+val othervalue: Long = 100L
+def addvalues(somevalue:Long): Long ={
+somevalue + othervalue}
+}
+
+
+//6. Syntax
+//syntax refers to using the correct language right?
+//I don't understand what code you want to represent syntax
+
+
+
+
+//7. Lambdas
+//lambdas are calculated when scope is entered
+//I am confused by lambdas
+val lambda: Long ={
+1000L
+// the brackets are scope
+}
+
+// 8. sigmaprops, what I was working on last week, is this correct?
+val deadline = blockchainSim.getHeight + 21600 //approx 30 days of block time
+val pkA: SigmaProp = PK("9etXmP7D3ZkWssDopWcWkCPpjn22RVuEyXoFSbVPWAvvzDbcDXE")
+val pkB: SigmaProp = PK("9gAdJaVnnoHQeF4DVZCuCqLvAo7AVrw6ryFnCk88wocr5Bhfr4P")
+val lockedfundscript = (pkA && HEIGHT < deadline) || (pkB && HEIGHT > deadline)
+sigmaProp(lockedfundscript)
+}
