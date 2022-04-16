@@ -88,7 +88,7 @@ This example illustrates how SigmaProps are used to define spending conditions f
 
 ```scala 
 {
-  val ownerPK: SigmaProp   = PK(ownerPKString) //Public key of owner 1
+  val ownerPK: SigmaProp   = PK(ownerPKString) //Public key of owner 1. needs to be address string
   val owner2PK: SigmaProp  = PK(ownerPKString2) //Public key of owner 2
   val thisYear: Int        = INPUTS(0).R4[Int].get //current year is in R4 of INPUT(0)
 
@@ -101,6 +101,6 @@ This example illustrates how SigmaProps are used to define spending conditions f
   val isRegLeapYear: Boolean = isLeapYearVal(thisYear)
 
   //ownerPK can always spend this box, owner 2 can only spend it during a leap year
-  (SigmaProp(isRegLeapYear) && owner2PK) || ownerPK
+  (sigmaProp(isRegLeapYear) && owner2PK) || ownerPK
 }
 ```
