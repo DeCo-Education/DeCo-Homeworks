@@ -16,6 +16,7 @@
     // Arbitrary data type
     sigmaProp(1==1) // SigmaProp
   }
+  else{
   val sum: Long = moreErg.fold(0, { // val with lambda.
   // This iterates through the moreErg Coll and sums the total value in the variable sum
     (accumulator: Long, element: Long) =>
@@ -23,6 +24,7 @@
   })
   def equalsSum(number: Long) = number == sum // def function
   sigmaProp(equalsTwo(15 * oneErg))
+  }
 }
 ```
 This contract does not acheive anything. It is meant to demonstrate the various things ErgoScript can do. 
