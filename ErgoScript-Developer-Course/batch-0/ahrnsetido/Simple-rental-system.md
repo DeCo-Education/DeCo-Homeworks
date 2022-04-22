@@ -44,6 +44,8 @@
 | | **Out(2): Renter eUTXOs**|
 | | **Out(3): Mining fee**|
 
+#### Input and Output Boxes
+
 |**In(0): Renter Utility Box** |
 |----|
 |- helps create all info/registers into Renter PCB|
@@ -81,6 +83,8 @@
 |**In(1): Renter PCB** |**Out(1): Renter PCB** | 
 ||**Out(2): Renter eUTXO**|
 ||**Out(3): Mining fee**|
+
+#### Input and Output Boxes
 
 |**In(0): Provider Token Box**|
 |---|
@@ -125,6 +129,8 @@
 ||**Out(2): Provider eUTXO**|
 ||**Out(3): Mining fee**|
 
+#### Input and Output Boxes
+
 |**In(0): PTB**|
 |---|
 |- Value: contains deposit, fee for rental job|
@@ -165,6 +171,8 @@
 |**In(1): Renter PCB**|**Out(1): Renter PCB**|
 |**In(2): Renter eUTXO**|**Out(2): Renter eUTXO**|
 ||**Out(3): Mining fee**|
+
+#### Input and Output Boxes
 
 |**In(0): PTB**|
 |---|
