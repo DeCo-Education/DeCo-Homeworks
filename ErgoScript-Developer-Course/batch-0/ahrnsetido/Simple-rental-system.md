@@ -15,9 +15,9 @@
 
 ## 2 Parties involved
 
- - 2.1. **Renter**: Wants to rent the real life asset for use
+  2.1. **Renter**: Wants to rent the real life asset for use
  
- - 2.2. **Provider**: Provides real life asset
+  2.2. **Provider**: Provides real life asset
 
 ## 3 Overview of transactions
 
