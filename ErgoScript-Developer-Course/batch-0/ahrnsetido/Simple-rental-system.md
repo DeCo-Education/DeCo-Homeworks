@@ -21,13 +21,19 @@
 
 ## 3 Overview of transactions
 
-3.1. **Renter provides deposit and rental fee** to the system.
-3.2. **Renter is given the token** to access real life asset.
-3.3. **Renter picks up real life asset**. 
-3.4. **Provider is paid for the rental fee**.
-3.5. **Renter returns real life asset**.
-3.6. **Provider confirms return of the asset**.
-3.7. **Deposit is returned to Renter**.
+  3.1. **Renter provides deposit and rental fee** to the system.
+  
+  3.2. **Renter is given the token** to access real life asset.
+
+  3.3. **Renter picks up real life asset**. 
+
+  3.4. **Provider is paid for the rental fee**.
+
+  3.5. **Renter returns real life asset**.
+
+  3.6. **Provider confirms return of the asset**.
+  
+  3.7. **Deposit is returned to Renter**.
 
 ## 4 Details of Transactions
 ### 4.1 Renter provides deposit and fee transaction
