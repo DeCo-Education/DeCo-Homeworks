@@ -54,7 +54,7 @@ else
   val noUserBox1 == true
 }
 
-val expirydate: int = 1000000L
+val expirydate: int = 1000000
 val exchangeRate: long = 5 
 val amountProvided: long = 20 * ErgInNanoErg
 val amountNeeded: long = exchangeRate * amountProvided / ErgInNanoErg // i.e. 5*20 nE / nE = 100sigUSD
