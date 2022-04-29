@@ -61,7 +61,7 @@ val amountNeeded: long = exchangeRate * amountProvided / ErgInNanoErg // i.e. 5*
 val tokenID1: Coll[Byte] = fromBase58("1111111111111111111111111111111111")
 val openerpk: SigmaProp = userBox1pk
 
-val openInfo: Coll(long, long, long, long, Coll[Byte], SigmaProp) = (
+val openInfo: Coll(int, long, long, long, Coll[Byte], SigmaProp) = (
   expirydate,exchangeRate, amountProvided, amountNeeded, tokenID1, openerpk)
 
 //--------------------------------------------
@@ -105,7 +105,7 @@ val openContract: Boolean = allOf(Coll(
 
 // fill in OpenInfo into R5
   openInfoCheck,
-  futureContractBox.R5[Coll(long, long, long, long, Coll[Byte], SigmaProp)].get == OpenInfo
+  futureContractBox.R5[Coll(int, long, long, long, Coll[Byte], SigmaProp)].get == OpenInfo
 // can force full Collection? can specify type like this?
 
 ))
