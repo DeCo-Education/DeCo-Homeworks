@@ -1,0 +1,8 @@
+DeCo Layman course Team HW – Draft 1
+Team: NFT Certification
+
+Our goal is to generate a NFT certificate verifying the completion of both the Layman’s and Ergoscript courses. By the end of the course, a successful project will deliver a viable system to automate NFT generation. Where the course leadership can simply select the students who have successfully completed the course and submit a transaction that mints the NFT and delivers it to the Deco graduates’ wallet. The data that we will include in the metadata of the transaction are; student “name”, Team, Team members, course, organization, course lead, course remarks, and student feedback. We will also create a unique image celebrating the completion and earned achievement.
+
+To accomplish our goal, we will first compile a class roster. This will provide our team with the intended output addresses as well as the data needed for all the transactions. We will then work to create a smart contract that, when interacted with by the course lead address, will mint NFTs and send to the owner’s wallet. 
+
+Current process, it takes an instructor 45 minutes to mint a graduates NFT. With 30 students, the process of simply minting will take days for a person to complete. Automating this system will streamline the process and provide immutable proof of ownership and completion.

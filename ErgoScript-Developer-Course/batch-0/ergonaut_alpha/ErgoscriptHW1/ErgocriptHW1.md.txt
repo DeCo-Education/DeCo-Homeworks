@@ -1,0 +1,14 @@
+DeCo Ergoscript HW1
+NFT certification
+
+The purpose of this multistage transaction is to take a class roster of the students participating in the course and automate NFT generation and delivery upon course completion. The first transaction will only require involvement from the course instructor. The second transaction will require both involvement from the course instructor and the graduating student.
+
+Our first box is classified as the “Roster”. This box will contain the arbitrary data such as student wallet addresses, course, team, and organization. It will only be protected by a guard script ensuring that the signer is the course leads wallet.
+
+Tx1 is considered the “enrollment” transaction, where the box containing the roster is spent and new unspent boxes are created, utilizing the arbitrary data in the roster box, reflecting each student. These boxes will be used as inputs of our second transaction and the data in the register will be used for NFT minting. 
+
+The unspent boxes from the first transaction will be subject to a guard script that requires both the instructor and student to interact with the box prior to being spent. This will provide an opportunity for student feedback regarding the course as well as the instructors recognition of the student course completion.
+
+Tx2 is considered the “Cert Minting” transaction. This transaction will pull the arbitrary data from the registers of the inputs to mint the NFT certificates and spend the previous enrollment box.
+
+The resulting outputs will be the complete NFT certificates, attached to the box as a token, with assigned ownership to the students wallet address.
