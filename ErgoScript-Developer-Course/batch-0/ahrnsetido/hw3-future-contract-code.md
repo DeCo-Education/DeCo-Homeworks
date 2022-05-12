@@ -3,6 +3,9 @@
 
 ```scala
 {
+// TODO: if number of inputs
+// Registers rearrange
+// no emptystatus
 //-----------Contract guards Future contract box
 // and has the following spending paths:
 //  SP1 Trader 1 (opener) sets contract - openContract
@@ -149,7 +152,7 @@ val fundContract: Boolean = allOf(Coll(
   futureContractBox.R4(1).get == statusFunded,
 
 // require ERG stay the same in FCB + miningFee for expiration tx
-  futureContractBox.value == futureContractBox.value + miningFee,
+  futureContractBox.value == SELF.value + miningFee,
 
 // require funder to have correct tokens
   funderHasTokensCheck,
@@ -196,7 +199,7 @@ val payout: Boolean = allOf(Coll(
   hasfunds,
   // Erg is sent to funder, but calculated from sigUSD amount Needed value and exchangerate
   OUTPUT(2).propositionBytes == funderpkInFCB.propBytes,
-  OUTPUT(2).value == amountNeededInFCB / xrateInFCB * ErgInNanoErg, //in nanoErgs
+  OUTPUT(2).value == SELF.tokens(0)._2.get / xrateInFCB * ErgInNanoErg, //in nanoErgs
 
   // all tokens in FCB are sent to Openerpk
   OpenerBox.tokens(0)._1.get == tokenID1InFCB, // in sigUSD
