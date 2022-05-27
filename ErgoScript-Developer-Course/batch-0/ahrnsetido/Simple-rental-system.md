@@ -15,18 +15,25 @@
 
 ## 2 Parties involved
 
- 2.1. **Renter**: Wants to rent the real life asset for use
- 2.2. **Provider**: Provides real life asset
+  2.1. **Renter**: Wants to rent the real life asset for use
+ 
+  2.2. **Provider**: Provides real life asset
 
 ## 3 Overview of transactions
 
-3.1. **Renter provides deposit and rental fee** to the system.
-3.2. **Renter is given the token** to access real life asset.
-3.3. **Renter picks up real life asset**. 
-3.4. **Provider is paid for the rental fee**.
-3.5. **Renter returns real life asset**.
-3.6. **Provider confirms return of the asset**.
-3.7. **Deposit is returned to Renter**.
+  3.1. **Renter provides deposit and rental fee** to the system.
+  
+  3.2. **Renter is given the token** to access real life asset.
+
+  3.3. **Renter picks up real life asset**. 
+
+  3.4. **Provider is paid for the rental fee**.
+
+  3.5. **Renter returns real life asset**.
+
+  3.6. **Provider confirms return of the asset**.
+  
+  3.7. **Deposit is returned to Renter**.
 
 ## 4 Details of Transactions
 ### 4.1 Renter provides deposit and fee transaction
@@ -36,6 +43,8 @@
 |**Inputs: Renter eUTXOs**| **Out(1): Renter Proxy Contract Box (PCB)**|
 | | **Out(2): Renter eUTXOs**|
 | | **Out(3): Mining fee**|
+
+#### Input and Output Boxes
 
 |**In(0): Renter Utility Box** |
 |----|
@@ -74,6 +83,8 @@
 |**In(1): Renter PCB** |**Out(1): Renter PCB** | 
 ||**Out(2): Renter eUTXO**|
 ||**Out(3): Mining fee**|
+
+#### Input and Output Boxes
 
 |**In(0): Provider Token Box**|
 |---|
@@ -118,6 +129,8 @@
 ||**Out(2): Provider eUTXO**|
 ||**Out(3): Mining fee**|
 
+#### Input and Output Boxes
+
 |**In(0): PTB**|
 |---|
 |- Value: contains deposit, fee for rental job|
@@ -158,6 +171,8 @@
 |**In(1): Renter PCB**|**Out(1): Renter PCB**|
 |**In(2): Renter eUTXO**|**Out(2): Renter eUTXO**|
 ||**Out(3): Mining fee**|
+
+#### Input and Output Boxes
 
 |**In(0): PTB**|
 |---|
